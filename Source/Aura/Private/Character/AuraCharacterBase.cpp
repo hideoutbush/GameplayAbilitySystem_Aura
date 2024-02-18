@@ -11,8 +11,9 @@ AAuraCharacterBase::AAuraCharacterBase()
 
 	//创建子组件名称
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
+	//在骨骼网格体中添加武器插槽并将此命名即可查询到该组件
 	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
-	//设置无碰撞与蛇
+	//设置无碰撞预设
 	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
