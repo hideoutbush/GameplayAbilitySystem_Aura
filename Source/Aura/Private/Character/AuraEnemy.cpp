@@ -3,12 +3,27 @@
 
 #include "Character/AuraEnemy.h"
 
+#include "Aura/Aura.h"
+
+AAuraEnemy::AAuraEnemy()
+{
+	//使继承自AuraEnemy类设置下的网格体碰撞预设自动更改为自定义,并将可视性Visibility改为阻挡Block
+	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility,ECR_Block);
+}
+
 void AAuraEnemy::HighlightActor()
 {
-	bHighlighted = true;
+	/*
+	 * 对网格体及武器添加外轮廓线
+	 */
+	GetMesh()->SetRenderCustomDepth(true);
+	GetMesh()->SetCustomDepthStencilValue(CUSTOM_DEPTH_RED);
+	Weapon->SetRenderCustomDepth(true);
+	Weapon->SetCustomDepthStencilValue(CUSTOM_DEPTH_RED);
 }
 
 void AAuraEnemy::UnHighlightActor()
 {
-	bHighlighted = false;
+	GetMesh()->SetRenderCustomDepth(false);
+	Weapon->SetRenderCustomDepth(false);
 }
