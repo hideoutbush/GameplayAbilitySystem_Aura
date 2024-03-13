@@ -11,18 +11,18 @@
 
 
 class  UAbilitySystemComponent;
-class UAttributeSet;
+class  UAttributeSet;
 /**
  * 
  */
-UCLASS()
+UCLASS() 
 class AURA_API AAuraPlayerState : public APlayerState,public  IAbilitySystemInterface
 {
 	GENERATED_BODY()
 public:
 	AAuraPlayerState();
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	UAttributeSet* GetAttributeSet() const {return  AttributeSet;}
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;//获取asc
+	UAttributeSet* GetAttributeSet() const {return  AttributeSet;}//获取as
 protected:
 	UPROPERTY(EditAnywhere,Category = "")
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;

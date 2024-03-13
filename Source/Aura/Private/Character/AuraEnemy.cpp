@@ -40,6 +40,6 @@ void AAuraEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// check(AbilitySystemComponent),U++中指针为空即可能发生崩溃，因此谨慎使用。
+	 check(AbilitySystemComponent);//U++中指针为空即可能发生崩溃，因此谨慎使用。
 	AbilitySystemComponent->InitAbilityActorInfo(this,this);
 }
