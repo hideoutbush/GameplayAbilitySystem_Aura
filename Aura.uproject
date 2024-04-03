@@ -12,7 +12,9 @@
 				"Engine",
 				"Slate",
 				"SlateCore",
-				"GameplayAbilities"
+				"GameplayAbilities",
+				"UMG",
+				"CoreUObject"
 			]
 		}
 	],
