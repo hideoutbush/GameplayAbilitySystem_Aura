@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "AbilitySystem/AuraAttributeSet.h"
-#include "UObject/NoExportTypes.h"
 #include "AuraWidgetController.generated.h"
 
 class  UAttributeSet;
@@ -16,7 +15,7 @@ struct FWidgetControllerParams
 {
 	GENERATED_BODY()
 	FWidgetControllerParams(){}
-	FWidgetControllerParams(APlayerController* PC,APlayerState* PS,UAbilitySystemComponent* ASC,UAuraAttributeSet* AS)
+	FWidgetControllerParams(APlayerController* PC,APlayerState* PS,UAbilitySystemComponent* ASC,UAttributeSet* AS)
 	:PlayerController(PC), PlayState(PS),AbilitySystemComponent(ASC),AttributeSet(AS){}
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
@@ -44,6 +43,7 @@ class AURA_API UAuraWidgetController : public UObject
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
+	virtual  void BroadcastInitialValues();
 	
 protected:
 	UPROPERTY(BlueprintReadOnly,Category="WidgetController")

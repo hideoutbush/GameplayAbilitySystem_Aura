@@ -25,8 +25,9 @@ public:
 
 	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& WCParams);
 
-protected:
-	virtual  void BeginPlay() override;
+	void InitOverlay(APlayerController* PC,APlayerState* PS,UAbilitySystemComponent* ASC,UAttributeSet* AS);
+	
+
 	
 private:
 
